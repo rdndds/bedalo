@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak & Aspirasi - Website Resmi Dusun Bedalo</title>
+    
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Menggunakan Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Menggunakan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Menerapkan font Poppins ke seluruh halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">
+                Dusun Bedalo
+            </a>
+            <!-- Navigasi untuk Desktop -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
+                <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
+                <a href="potensi.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Potensi</a>
+                <a href="pariwisata.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Pariwisata</a>
+                <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
+                <!-- PERUBAHAN: Mengubah style tombol Kontak menjadi state aktif -->
+                <a href="kontak.html" class="bg-blue-700 text-white px-4 py-2 rounded-md">Kontak</a>
+            </div>
+            <!-- Tombol Menu untuk Mobile -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
+            <a href="profil.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Profil</a>
+            <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
+            <a href="pariwisata.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Pariwisata</a>
+            <a href="galeri.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Galeri</a>
+            <a href="kontak.html" class="block px-6 py-3 text-blue-600 bg-gray-100">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Judul Halaman -->
+        <section class="bg-blue-600 text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold">Hubungi Kami</h1>
+                <p class="mt-2 text-lg">Informasi Kontak dan Saluran Aspirasi Warga</p>
+            </div>
+        </section>
+
+        <!-- Kontak Perangkat Dusun -->
+        <section id="kontak-perangkat" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kontak Perangkat Dusun</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Kontak 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
+                            <p class="text-gray-500 mb-2">Kepala Dusun</p>
+                            <a href="tel:081234567890" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7890</a>
+                        </div>
+                    </div>
+                    <!-- Kontak 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
+                            <p class="text-gray-500 mb-2">Ketua RW 01</p>
+                            <a href="tel:081234567891" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7891</a>
+                        </div>
+                    </div>
+                    <!-- Kontak 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
+                            <p class="text-gray-500 mb-2">Ketua RT 01</p>
+                            <a href="tel:081234567892" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7892</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulir Aspirasi -->
+        <section id="aspirasi" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <!-- Deskripsi Formulir -->
+                    <div class="lg:w-1/3 text-center lg:text-left">
+                        <h2 class="text-3xl font-bold text-gray-800">Punya Ide atau Masukan?</h2>
+                        <p class="text-gray-600 mt-4 leading-relaxed">Kami sangat terbuka untuk menerima aspirasi, kritik, dan saran dari seluruh warga demi kemajuan Dusun Bedalo. Silakan sampaikan melalui formulir di samping.</p>
+                    </div>
+                    <!-- Formulir -->
+                    <div class="lg:w-2/3 w-full">
+                        <div class="bg-white p-8 rounded-lg shadow-2xl">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Formulir Aspirasi Warga</h3>
+                            <form action="#" method="POST">
+                                <div class="mb-4">
+                                    <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
+                                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="kontak" class="block text-gray-700 text-sm font-bold mb-2">No. Telepon / Email</label>
+                                    <input type="text" id="kontak" name="kontak" placeholder="Agar kami bisa menghubungi Anda kembali" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="subjek" class="block text-gray-700 text-sm font-bold mb-2">Subjek</label>
+                                    <input type="text" id="subjek" name="subjek" placeholder="Contoh: Usulan Perbaikan Jalan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="pesan" class="block text-gray-700 text-sm font-bold mb-2">Pesan Aspirasi</label>
+                                    <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan, ide, atau masukan Anda di sini..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
+                                        Kirim Pesan
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold">Dusun Bedalo</h3>
+            <p class="max-w-md mx-auto mt-2 text-gray-400">
+                Dusun Bedalo, Desa Krambil Sawit, Kecamatan Saptosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.
+            </p>
+            <div class="mt-6">
+                <a href="kontak.html" class="text-gray-400 hover:text-white mx-3">Kontak Perangkat</a>
+                <span class="text-gray-500">|</span>
+                <a href="profil.html#peta" class="text-gray-400 hover:text-white mx-3">Peta Wilayah</a>
+                <span class="text-gray-500">|</span>
+                <a href="#aspirasi" class="text-gray-400 hover:text-white mx-3">Formulir Aspirasi</a>
+            </div>
+            <p class="mt-8 text-gray-500 text-sm">
+                &copy; 2024 Website Dusun Bedalo | Dikembangkan oleh Mahasiswa KKN [Nama Universitas].
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk toggle menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

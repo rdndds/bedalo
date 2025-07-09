@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pariwisata & Budaya Dusun Bedalo - Website Resmi</title>
+    
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Menggunakan Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Menggunakan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Menerapkan font Poppins ke seluruh halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Efek smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">
+                Dusun Bedalo
+            </a>
+            <!-- Navigasi untuk Desktop -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
+                <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
+                <a href="potensi.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Potensi</a>
+                <a href="pariwisata.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Pariwisata</a>
+                <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
+                <a href="kontak.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
+            </div>
+            <!-- Tombol Menu untuk Mobile -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
+            <a href="profil.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Profil</a>
+            <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
+            <a href="pariwisata.html" class="block px-6 py-3 text-blue-600 bg-gray-100">Pariwisata</a>
+            <a href="galeri.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Galeri</a>
+            <a href="kontak.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Judul Halaman -->
+        <section class="bg-purple-600 text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold">Pariwisata & Budaya</h1>
+                <p class="mt-2 text-lg">Pesona Alam dan Kekayaan Tradisi Dusun Bedalo</p>
+            </div>
+        </section>
+
+        <!-- Destinasi Wisata -->
+        <section id="destinasi" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Destinasi Wisata</h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Jelajahi sudut-sudut indah di Dusun Bedalo yang menawarkan ketenangan dan pemandangan memukau.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Destinasi 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/800x500/a0aec0/ffffff?text=Air+Terjun+Bedalo" alt="Air Terjun" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Air Terjun Bedalo</h3>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suara gemericik air yang menenangkan dan udara sejuk menjadikannya tempat sempurna untuk melepas penat.</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Destinasi 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/800x500/63b3ed/ffffff?text=Bukit+Harapan" alt="Bukit" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Bukit Harapan</h3>
+                            <p class="text-gray-600 mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nikmati pemandangan matahari terbit atau terbenam yang spektakuler.</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adat Istiadat & Tradisi -->
+        <section id="tradisi" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Adat Istiadat & Tradisi</h2>
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/800x600/f6ad55/ffffff?text=Upacara+Adat" alt="Upacara Adat" class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Upacara Sedekah Bumi</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Tradisi ini merupakan wujud syukur warga kepada Tuhan atas hasil panen yang melimpah. Diadakan setahun sekali, acara ini diisi dengan doa bersama dan makan-makan.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Seluruh warga bergotong-royong mempersiapkan acara, menunjukkan kuatnya rasa kebersamaan di dusun kami.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Kesenian & Budaya -->
+        <section id="kesenian" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kesenian & Budaya</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/800x600/b794f4/ffffff?text=Tari+Tradisional" alt="Tari Tradisional" class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Tari Topeng Ireng</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Tarian ini merupakan salah satu kesenian kebanggaan Dusun Bedalo yang sering ditampilkan dalam berbagai acara budaya. Gerakannya yang energik dan kostumnya yang unik selalu memukau penonton.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Sanggar tari kami terbuka bagi siapa saja yang ingin belajar dan melestarikan budaya ini.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kalender Acara -->
+        <section id="kalender" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kalender Acara Budaya</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <ul class="divide-y divide-gray-200">
+                        <li class="py-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-800">Upacara Sedekah Bumi</p>
+                                <p class="text-sm text-gray-500">Wujud syukur atas hasil panen.</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-purple-600">Agustus 2024</p>
+                            </div>
+                        </li>
+                        <li class="py-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-800">Pentas Seni & Budaya</p>
+                                <p class="text-sm text-gray-500">Perayaan hari kemerdekaan.</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-purple-600">Agustus 2024</p>
+                            </div>
+                        </li>
+                        <li class="py-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-800">Festival Dolanan Anak</p>
+                                <p class="text-sm text-gray-500">Melestarikan permainan tradisional.</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-purple-600">Oktober 2024</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="max-w-md mx-auto mt-2 text-gray-400">
+                Dusun Bedalo, Desa Krambil Sawit, Kecamatan Saptosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.
+            </p>
+            <div class="mt-6">
+                <a href="kontak.html" class="text-gray-400 hover:text-white mx-3">Kontak Perangkat</a>
+                <span class="text-gray-500">|</span>
+                <a href="profil.html#peta" class="text-gray-400 hover:text-white mx-3">Peta Wilayah</a>
+                <span class="text-gray-500">|</span>
+                <a href="kontak.html#aspirasi" class="text-gray-400 hover:text-white mx-3">Formulir Aspirasi</a>
+            </div>
+            <p class="mt-8 text-gray-500 text-sm">
+                &copy; 2025 Website Dusun Bedalo <br> oleh Mahasiswa KKN 117 UIN Sunan Kalijaga Yogyakarta.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk toggle menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
