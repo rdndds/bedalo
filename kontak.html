@@ -122,28 +122,35 @@
                     <div class="lg:w-2/3 w-full">
                         <div class="bg-white p-8 rounded-lg shadow-2xl">
                             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Formulir Aspirasi Warga</h3>
-                            <form action="#" method="POST">
+                            <!-- PERUBAHAN 1: Beri ID pada form dan hapus action/method -->
+                            <form id="aspirasi-form">
                                 <div class="mb-4">
                                     <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
-                                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <!-- PERUBAHAN 2: Tambahkan atribut 'name' dengan Entry ID Anda -->
+                                    <input type="text" id="nama" name="entry.2116275708" placeholder="Masukkan nama Anda" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="kontak" class="block text-gray-700 text-sm font-bold mb-2">No. Telepon / Email</label>
-                                    <input type="text" id="kontak" name="kontak" placeholder="Agar kami bisa menghubungi Anda kembali" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <!-- PERUBAHAN 2: Tambahkan atribut 'name' dengan Entry ID Anda -->
+                                    <input type="text" id="kontak" name="entry.175133211" placeholder="Agar kami bisa menghubungi Anda kembali" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="subjek" class="block text-gray-700 text-sm font-bold mb-2">Subjek</label>
-                                    <input type="text" id="subjek" name="subjek" placeholder="Contoh: Usulan Perbaikan Jalan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <!-- PERUBAHAN 2: Tambahkan atribut 'name' dengan Entry ID Anda -->
+                                    <input type="text" id="subjek" name="entry.1266128475" placeholder="Contoh: Usulan Perbaikan Jalan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-6">
                                     <label for="pesan" class="block text-gray-700 text-sm font-bold mb-2">Pesan Aspirasi</label>
-                                    <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan, ide, atau masukan Anda di sini..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                    <!-- PERUBAHAN 2: Tambahkan atribut 'name' dengan Entry ID Anda -->
+                                    <textarea id="pesan" name="entry.1942425125" rows="5" placeholder="Tuliskan pesan, ide, atau masukan Anda di sini..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required></textarea>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
                                         Kirim Pesan
                                     </button>
                                 </div>
+                                <!-- PERUBAHAN 3: Tambahkan elemen untuk menampilkan status pengiriman -->
+                                <div id="form-status" class="mt-4 text-center"></div>
                             </form>
                         </div>
                     </div>
@@ -171,6 +178,16 @@
         </div>
     </footer>
 
+    <!-- PERUBAHAN 1: Tambahkan struktur HTML untuk Modal Pop-up -->
+    <div id="status-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm w-full">
+            <!-- Konten modal akan diisi oleh JavaScript -->
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- PERUBAHAN 2: Modifikasi script JavaScript -->
+
     <script>
         // Script untuk toggle menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -178,6 +195,78 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            });
+
+        // --- SCRIPT UNTUK MENGIRIM DATA FORMULIR KE GOOGLE SHEETS ---
+        const form = document.getElementById('aspirasi-form');
+        const statusModal = document.getElementById('status-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function hideModal() {
+            statusModal.classList.add('hidden');
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah form melakukan submit standar
+
+            // Tampilkan modal dengan animasi loading
+            modalContent.innerHTML = `
+                <div class="flex justify-center items-center mb-4">
+                    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+                <p class="text-lg text-gray-700">Mengirim pesan...</p>
+            `;
+            statusModal.classList.remove('hidden');
+
+            const formData = new FormData(form);
+            // GANTI DENGAN ACTION URL ANDA DARI TAHAP 1 LANGKAH 4
+            const formAction = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfWaCgBA-cNraUbTmOGjlmrZQ-99edYMdUSkbA-kQBtZm6QOw/formResponse';
+
+            fetch(formAction, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Mode 'no-cors' penting untuk Google Forms
+            })
+            .then(() => {
+                // Tampilkan pesan sukses di modal
+                modalContent.innerHTML = `
+                    <div class="text-green-500 text-6xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Terima Kasih!</h3>
+                    <p class="text-gray-600 mb-6">Aspirasi Anda telah berhasil terkirim.</p>
+                    <button id="close-modal-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full">Tutup</button>
+                `;
+                document.getElementById('close-modal-btn').addEventListener('click', hideModal);
+                form.reset();
+            })
+            .catch(error => {
+                // Tampilkan pesan error di modal
+                modalContent.innerHTML = `
+                    <div class="text-red-500 text-6xl mb-4">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Gagal Mengirim</h3>
+                    <p class="text-gray-600 mb-6">Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
+                    <button id="close-modal-btn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full">Tutup</button>
+                `;
+                document.getElementById('close-modal-btn').addEventListener('click', hideModal);
+                console.error('Error:', error);
+            });
+        });
+
+        // Menutup modal jika menekan tombol Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !statusModal.classList.contains('hidden')) {
+                hideModal();
+            }
+        });
+
+        // Menutup modal jika mengklik di luar area konten modal
+        statusModal.addEventListener('click', (e) => {
+            if (e.target === statusModal) {
+                hideModal();
+            }
         });
     </script>
 
