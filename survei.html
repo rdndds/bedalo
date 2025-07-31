@@ -295,7 +295,7 @@
         }
         
         function resetChecklist(type) {
-            if (confirm(`Anda yakin ingin mereset checklist ${type.toUpperCase()}?`)) {
+            if (confirm(`Yakin mau reset checklist ${type.toUpperCase()}?`)) {
                 checklistData[type].forEach(item => {
                     document.getElementById(item.id).checked = false;
                     localStorage.removeItem(item.id);
