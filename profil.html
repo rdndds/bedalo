@@ -8,21 +8,22 @@
     
     <!-- Menggunakan Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- PERUBAHAN 1: Menambahkan CSS untuk AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Menggunakan Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapabsolute w-fullis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Menggunakan Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* Menerapkan font Poppins ke seluruh halaman */
         body {
             font-family: 'Poppins', sans-serif;
         }
-        /* Efek smooth scroll */
         html {
             scroll-behavior: smooth;
         }
@@ -36,7 +37,6 @@
             <a href="index.html" class="text-2xl font-bold text-gray-800">
                 Dusun Bedalo
             </a>
-            <!-- Navigasi untuk Desktop -->
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
                 <a href="profil.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Profil</a>
@@ -45,7 +45,6 @@
                 <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
                 <a href="kontak.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
             </div>
-            <!-- Tombol Menu untuk Mobile -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -54,8 +53,7 @@
                 </button>
             </div>
         </nav>
-        <!-- Menu Mobile (Tersembunyi secara default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-lg">
             <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
             <a href="profil.html" class="block px-6 py-3 text-blue-600 bg-gray-100">Profil</a>
             <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
@@ -69,16 +67,17 @@
         <!-- Judul Halaman -->
         <section class="bg-blue-600 text-white py-12">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl font-bold">Profil Dusun Bedalo</h1>
-                <p class="mt-2 text-lg">Mengenal Lebih Dekat Dusun Kami</p>
+                <h1 class="text-4xl font-bold" data-aos="fade-down">Profil Dusun Bedalo</h1>
+                <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="100">Mengenal Lebih Dekat Dusun Kami</p>
             </div>
         </section>
 
         <!-- Sejarah & Asal-Usul -->
-        <section id="sejarah" class="py-20 bg-white">
+        <section id="sejarah" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Sejarah & Asal-Usul</h2>
-                <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed">
+                <!-- PERUBAHAN 2: Menambahkan atribut data-aos -->
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Sejarah & Asal-Usul</h2>
+                <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
                     <p class="mb-4">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
                     <p>Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
@@ -87,17 +86,15 @@
         </section>
 
         <!-- Visi & Misi -->
-        <section id="visimisi" class="py-20">
+        <section id="visimisi" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Visi & Misi</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Visi & Misi</h2>
                 <div class="flex flex-col md:flex-row gap-10 max-w-5xl mx-auto">
-                    <!-- Visi -->
-                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Visi</h3>
                         <p class="text-gray-600 italic text-center">"Terwujudnya Dusun Bedalo yang Maju, Mandiri, Sejahtera, dan Berbudaya Berlandaskan Kearifan Lokal."</p>
                     </div>
-                    <!-- Misi -->
-                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-left" data-aos-delay="100">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Misi</h3>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li>Meningkatkan kualitas sumber daya manusia melalui pendidikan dan pelatihan.</li>
@@ -112,30 +109,26 @@
         </section>
 
         <!-- Struktur Pemerintahan -->
-        <section id="struktur" class="py-20 bg-white">
+        <section id="struktur" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Struktur Pemerintahan Dusun</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Struktur Pemerintahan Dusun</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Contoh 1: Kepala Dusun -->
-                    <div class="text-center">
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
                         <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Pejabat" alt="Foto Pejabat" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
                         <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
                         <p class="text-gray-500">Kepala Dusun</p>
                     </div>
-                     <!-- Contoh 2 -->
-                    <div class="text-center">
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
                         <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Pejabat" alt="Foto Pejabat" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
                         <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
                         <p class="text-gray-500">Ketua RW 01</p>
                     </div>
-                     <!-- Contoh 3 -->
-                    <div class="text-center">
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
                         <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Pejabat" alt="Foto Pejabat" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
                         <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
                         <p class="text-gray-500">Ketua RT 01</p>
                     </div>
-                     <!-- Contoh 4 -->
-                    <div class="text-center">
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
                         <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Pejabat" alt="Foto Pejabat" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
                         <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
                         <p class="text-gray-500">Ketua Karang Taruna</p>
@@ -145,26 +138,26 @@
         </section>
 
         <!-- Data Demografi -->
-        <section id="demografi" class="py-20">
+        <section id="demografi" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Data Demografi</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Data Demografi</h2>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-users text-4xl text-blue-500 mb-3"></i>
                         <p class="text-3xl font-bold text-gray-800">1,234</p>
                         <p class="text-gray-500">Jumlah Penduduk</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
                         <i class="fas fa-male text-4xl text-blue-500 mb-3"></i>
                         <p class="text-3xl font-bold text-gray-800">610</p>
                         <p class="text-gray-500">Laki-laki</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-female text-4xl text-pink-500 mb-3"></i>
                         <p class="text-3xl font-bold text-gray-800">624</p>
                         <p class="text-gray-500">Perempuan</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center md:col-span-3">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center md:col-span-3" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-briefcase text-4xl text-green-500 mb-3"></i>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Mata Pencaharian Utama</h4>
                         <p class="text-gray-600">Petani, Pedagang, Buruh, Wiraswasta</p>
@@ -174,11 +167,10 @@
         </section>
         
         <!-- Peta Wilayah -->
-        <section id="peta" class="py-20 bg-white">
+        <section id="peta" class="py-20 bg-white overflow-hidden">
              <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Peta Wilayah Dusun</h2>
-                <div class="w-full h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden">
-                    <!-- Ganti src dengan link embed Google Maps Anda -->
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Peta Wilayah Dusun</h2>
+                <div class="w-full h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.0932745914556!2d110.48636027500821!3d-8.091970191936598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bafbba8806743%3A0xc6d4983457dd25c9!2sBalai%20Dusun%20Bedalo!5e0!3m2!1sen!2sid!4v1752035265194!5m2!1sen!2sid" 
                         width="100%" 
@@ -195,25 +187,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="max-w-md mx-auto mt-2 text-gray-400">
-                Dusun Bedalo, Desa Krambil Sawit, Kecamatan Saptosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.
-            </p>
-            <div class="mt-6">
-                <a href="kontak.html" class="text-gray-400 hover:text-white mx-3">Kontak Perangkat</a>
-                <span class="text-gray-500">|</span>
-                <a href="#peta" class="text-gray-400 hover:text-white mx-3">Peta Wilayah</a>
-                <span class="text-gray-500">|</span>
-                <a href="kontak.html#aspirasi" class="text-gray-400 hover:text-white mx-3">Formulir Aspirasi</a>
-            </div>
-            <p class="mt-8 text-gray-500 text-sm">
-                &copy; 2025 Website Dusun Bedalo <br> oleh Mahasiswa KKN 117 UIN Sunan Kalijaga Yogyakarta.
-            </p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- PERUBAHAN 3: Menambahkan Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // PERUBAHAN 4: Menginisialisasi AOS
+        AOS.init({
+            duration: 800,
+            once: false,
+        });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
         // Script untuk toggle menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');

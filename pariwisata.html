@@ -8,6 +8,9 @@
     
     <!-- Menggunakan Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- PERUBAHAN 1: Menambahkan CSS untuk AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Menggunakan Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +21,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* Menerapkan font Poppins ke seluruh halaman */
         body {
             font-family: 'Poppins', sans-serif;
         }
-        /* Efek smooth scroll */
         html {
             scroll-behavior: smooth;
         }
@@ -36,7 +37,6 @@
             <a href="index.html" class="text-2xl font-bold text-gray-800">
                 Dusun Bedalo
             </a>
-            <!-- Navigasi untuk Desktop -->
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
                 <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
@@ -45,7 +45,6 @@
                 <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
                 <a href="kontak.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
             </div>
-            <!-- Tombol Menu untuk Mobile -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -54,8 +53,7 @@
                 </button>
             </div>
         </nav>
-        <!-- Menu Mobile (Tersembunyi secara default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-lg">
             <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
             <a href="profil.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Profil</a>
             <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
@@ -69,20 +67,20 @@
         <!-- Judul Halaman -->
         <section class="bg-purple-600 text-white py-12">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl font-bold">Pariwisata & Budaya</h1>
-                <p class="mt-2 text-lg">Pesona Alam dan Kekayaan Tradisi Dusun Bedalo</p>
+                <h1 class="text-4xl font-bold" data-aos="fade-down">Pariwisata & Budaya</h1>
+                <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="100">Pesona Alam dan Kekayaan Tradisi Dusun Bedalo</p>
             </div>
         </section>
 
         <!-- Destinasi Wisata -->
-        <section id="destinasi" class="py-20 bg-white">
+        <section id="destinasi" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Destinasi Wisata</h2>
-                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Jelajahi sudut-sudut indah di Dusun Bedalo yang menawarkan ketenangan dan pemandangan memukau.</p>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4" data-aos="fade-up">Destinasi Wisata</h2>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Jelajahi sudut-sudut indah di Dusun Bedalo yang menawarkan ketenangan dan pemandangan memukau.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Destinasi 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <!-- PERUBAHAN 2: Menambahkan atribut data-aos pada setiap destinasi -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://placehold.co/800x500/a0aec0/ffffff?text=Air+Terjun+Bedalo" alt="Air Terjun" class="w-full h-64 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold text-gray-800 mb-2">Air Terjun Bedalo</h3>
@@ -90,8 +88,7 @@
                             <a href="#" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
                         </div>
                     </div>
-                    <!-- Destinasi 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://placehold.co/800x500/63b3ed/ffffff?text=Bukit+Harapan" alt="Bukit" class="w-full h-64 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold text-gray-800 mb-2">Bukit Harapan</h3>
@@ -104,14 +101,14 @@
         </section>
 
         <!-- Adat Istiadat & Tradisi -->
-        <section id="tradisi" class="py-20">
+        <section id="tradisi" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Adat Istiadat & Tradisi</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Adat Istiadat & Tradisi</h2>
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-                    <div class="md:w-1/2">
+                    <div class="md:w-1/2" data-aos="fade-left">
                         <img src="https://placehold.co/800x600/f6ad55/ffffff?text=Upacara+Adat" alt="Upacara Adat" class="rounded-lg shadow-xl w-full h-full object-cover">
                     </div>
-                    <div class="md:w-1/2">
+                    <div class="md:w-1/2" data-aos="fade-right">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Upacara Sedekah Bumi</h3>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Tradisi ini merupakan wujud syukur warga kepada Tuhan atas hasil panen yang melimpah. Diadakan setahun sekali, acara ini diisi dengan doa bersama dan makan-makan.
@@ -125,14 +122,14 @@
         </section>
         
         <!-- Kesenian & Budaya -->
-        <section id="kesenian" class="py-20 bg-white">
+        <section id="kesenian" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kesenian & Budaya</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kesenian & Budaya</h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
+                    <div class="md:w-1/2" data-aos="fade-right">
                         <img src="https://placehold.co/800x600/b794f4/ffffff?text=Tari+Tradisional" alt="Tari Tradisional" class="rounded-lg shadow-xl w-full h-full object-cover">
                     </div>
-                    <div class="md:w-1/2">
+                    <div class="md:w-1/2" data-aos="fade-left">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Tari Topeng Ireng</h3>
                         <p class="text-gray-600 leading-relaxed mb-4">
                             Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Tarian ini merupakan salah satu kesenian kebanggaan Dusun Bedalo yang sering ditampilkan dalam berbagai acara budaya. Gerakannya yang energik dan kostumnya yang unik selalu memukau penonton.
@@ -148,8 +145,8 @@
         <!-- Kalender Acara -->
         <section id="kalender" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kalender Acara Budaya</h2>
-                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kalender Acara Budaya</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="zoom-in">
                     <ul class="divide-y divide-gray-200">
                         <li class="py-4 flex items-center justify-between">
                             <div>
@@ -185,26 +182,24 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="max-w-md mx-auto mt-2 text-gray-400">
-                Dusun Bedalo, Desa Krambil Sawit, Kecamatan Saptosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta.
-            </p>
-            <div class="mt-6">
-                <a href="kontak.html" class="text-gray-400 hover:text-white mx-3">Kontak Perangkat</a>
-                <span class="text-gray-500">|</span>
-                <a href="profil.html#peta" class="text-gray-400 hover:text-white mx-3">Peta Wilayah</a>
-                <span class="text-gray-500">|</span>
-                <a href="kontak.html#aspirasi" class="text-gray-400 hover:text-white mx-3">Formulir Aspirasi</a>
-            </div>
-            <p class="mt-8 text-gray-500 text-sm">
-                &copy; 2025 Website Dusun Bedalo <br> oleh Mahasiswa KKN 117 UIN Sunan Kalijaga Yogyakarta.
-            </p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- PERUBAHAN 3: Menambahkan Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // PERUBAHAN 4: Menginisialisasi AOS
+        AOS.init({
+            duration: 800,
+            once: false,
+        });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+            
         // Script untuk toggle menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
