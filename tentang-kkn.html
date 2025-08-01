@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang KKN 117 - Website Dusun Bedalo</title>
+    <link rel="icon" type="image/x-icon" href="icon.svg">
+    
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Menambahkan CSS untuk AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Menggunakan Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Menggunakan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-white shadow-md sticky top-0 z-50 relative">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gray-800">
+                Dusun Bedalo
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
+                <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
+                <a href="potensi.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Potensi</a>
+                <a href="pariwisata.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Pariwisata</a>
+                <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
+                <a href="kontak.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-lg">
+            <a href="/" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
+            <a href="profil.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Profil</a>
+            <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
+            <a href="pariwisata.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Pariwisata</a>
+            <a href="galeri.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Galeri</a>
+            <a href="kkn.html" class="block px-6 py-3 text-blue-600 bg-gray-100">Tentang KKN</a>
+            <a href="kontak.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Judul Halaman -->
+        <section class="bg-orange-500 text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold" data-aos="fade-down">Tentang KKN Reguler Periode 117</h1>
+                <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="100">Universitas Islam Negeri Sunan Kalijaga Yogyakarta</p>
+            </div>
+        </section>
+
+        <!-- Perkenalan Tim -->
+        <section id="pengantar" class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Tim Pengembang Website</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Website ini merupakan salah satu program kerja utama dari tim Kuliah Kerja Nyata (KKN) Reguler Periode 117 Unit VIII.D.1 dari Universitas Ahmad Dahlan. Kami berupaya mendigitalisasi informasi dan potensi Dusun Bedalo agar dapat diakses oleh masyarakat luas. Melalui website ini, kami berharap dapat menjadi jembatan antara Dusun Bedalo dengan dunia luar.
+                </p>
+            </div>
+        </section>
+
+        <!-- Anggota Tim -->
+        <section id="anggota" class="py-20 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Anggota Kelompok 129 - Bedalo</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Contoh Anggota 1 -->
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
+                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
+                        <p class="text-gray-500">Program Studi</p>
+                    </div>
+                    <!-- Contoh Anggota 2 -->
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
+                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
+                        <p class="text-gray-500">Program Studi</p>
+                    </div>
+                    <!-- Contoh Anggota 3 -->
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
+                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
+                        <p class="text-gray-500">Program Studi</p>
+                    </div>
+                    <!-- Contoh Anggota 4 -->
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
+                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
+                        <p class="text-gray-500">Program Studi</p>
+                    </div>
+                     <!-- Anda bisa menambahkan lebih banyak anggota di sini -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Script untuk toggle menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
