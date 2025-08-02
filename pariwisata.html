@@ -149,7 +149,7 @@
         // FUNGSI UNTUK MEMUAT KONTEN DINAMIS
         async function loadContent() {
             try {
-                const response = await fetch('data.json');
+                const response = await fetch('data/pariwisata.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -158,72 +158,122 @@
                 // 1. Memuat Destinasi Wisata
                 const destinasiContainer = document.getElementById('destinasi-container');
                 destinasiContainer.innerHTML = ''; // Kosongkan container
-                data.destinasi.forEach((item, index) => {
-                    const destinasiHtml = `
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="${200 + index * 100}">
-                            <img src="${item.gambarUrl}" alt="${item.altText}" class="w-full h-64 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-2">${item.judul}</h3>
-                                <p class="text-gray-600 mb-4">${item.deskripsi}</p>
-                                <a href="${item.petaLink}" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
+                if (data.destinasi && data.destinasi.length > 0) {
+                    data.destinasi.forEach((item, index) => {
+                        const destinasiHtml = `
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="${200 + index * 100}">
+                                <img src="${item.gambarUrl}" alt="${item.altText}" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">${item.judul}</h3>
+                                    <p class="text-gray-600 mb-4">${item.deskripsi}</p>
+                                    <a href="${item.petaLink}" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                    destinasiContainer.innerHTML += destinasiHtml;
-                });
+                        `;
+                        destinasiContainer.innerHTML += destinasiHtml;
+                    });
+                } else {
+                     document.getElementById('destinasi').style.display = 'none';
+                }
 
-                // 2. Memuat Adat & Tradisi
+
+                // 2. Memuat Adat & Tradisi (SEKARANG DINAMIS)
                 const tradisiContainer = document.getElementById('tradisi-container');
-                tradisiContainer.querySelector('img').src = data.tradisi.gambarUrl;
-                tradisiContainer.querySelector('img').alt = data.tradisi.altText;
-                tradisiContainer.querySelector('h3').textContent = data.tradisi.judul;
-                const tradisiParagraphs = tradisiContainer.querySelectorAll('p');
-                tradisiParagraphs[0].textContent = data.tradisi.deskripsi[0];
-                tradisiParagraphs[1].textContent = data.tradisi.deskripsi[1];
+                tradisiContainer.innerHTML = `<h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Adat Istiadat & Tradisi</h2>`; // Reset container tapi sisakan judul
+                if (data.tradisi && data.tradisi.length > 0) {
+                    data.tradisi.forEach((item, index) => {
+                        // Menentukan layout (gambar kiri atau kanan) berdasarkan index
+                        const isReversed = index % 2 !== 0;
+                        const layoutClass = isReversed ? 'md:flex-row-reverse' : 'md:flex-row';
+                        const fadeDirection1 = isReversed ? 'fade-left' : 'fade-right';
+                        const fadeDirection2 = isReversed ? 'fade-right' : 'fade-left';
 
-                // 3. Memuat Kesenian & Budaya
+                        const tradisiHtml = `
+                            <div class="flex flex-col ${layoutClass} items-center gap-12 mb-12">
+                                <div class="md:w-1/2" data-aos="${fadeDirection1}">
+                                    <img src="${item.gambarUrl}" alt="${item.altText}" class="rounded-lg shadow-xl w-full h-full object-cover">
+                                </div>
+                                <div class="md:w-1/2" data-aos="${fadeDirection2}">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-4">${item.judul}</h3>
+                                    ${item.deskripsi.map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`).join('')}
+                                </div>
+                            </div>
+                        `;
+                        tradisiContainer.innerHTML += tradisiHtml;
+                    });
+                } else {
+                     document.getElementById('tradisi').style.display = 'none';
+                }
+
+
+                // 3. Memuat Kesenian & Budaya (SEKARANG DINAMIS)
                 const kesenianContainer = document.getElementById('kesenian-container');
-                kesenianContainer.querySelector('img').src = data.kesenian.gambarUrl;
-                kesenianContainer.querySelector('img').alt = data.kesenian.altText;
-                kesenianContainer.querySelector('h3').textContent = data.kesenian.judul;
-                const kesenianParagraphs = kesenianContainer.querySelectorAll('p');
-                kesenianParagraphs[0].textContent = data.kesenian.deskripsi[0];
-                kesenianParagraphs[1].textContent = data.kesenian.deskripsi[1];
+                kesenianContainer.innerHTML = `<h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kesenian & Budaya</h2>`; // Reset container tapi sisakan judul
+                if (data.kesenian && data.kesenian.length > 0) {
+                    data.kesenian.forEach((item, index) => {
+                         // Menentukan layout (gambar kiri atau kanan) berdasarkan index
+                        const isReversed = index % 2 === 0; // Ganti urutan dari tradisi
+                        const layoutClass = isReversed ? 'md:flex-row' : 'md:flex-row-reverse';
+                        const fadeDirection1 = isReversed ? 'fade-right' : 'fade-left';
+                        const fadeDirection2 = isReversed ? 'fade-left' : 'fade-right';
+                        
+                        const kesenianHtml = `
+                            <div class="flex flex-col ${layoutClass} items-center gap-12 mb-12">
+                                <div class="md:w-1/2" data-aos="${fadeDirection1}">
+                                    <img src="${item.gambarUrl}" alt="${item.altText}" class="rounded-lg shadow-xl w-full h-full object-cover">
+                                </div>
+                                <div class="md:w-1/2" data-aos="${fadeDirection2}">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-4">${item.judul}</h3>
+                                    ${item.deskripsi.map(p => `<p class="text-gray-600 leading-relaxed mb-4">${p}</p>`).join('')}
+                                </div>
+                            </div>
+                        `;
+                        kesenianContainer.innerHTML += kesenianHtml;
+                    });
+                } else {
+                    document.getElementById('kesenian').style.display = 'none';
+                }
+
 
                 // 4. Memuat Kalender Acara
                 const kalenderList = document.getElementById('kalender-list');
                 kalenderList.innerHTML = ''; // Kosongkan list
-                data.kalender.forEach(item => {
-                    const acaraHtml = `
-                        <li class="py-4 flex items-center justify-between">
-                            <div>
-                                <p class="font-semibold text-gray-800">${item.acara}</p>
-                                <p class="text-sm text-gray-500">${item.deskripsi}</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="font-semibold text-purple-600">${item.tanggal}</p>
-                            </div>
-                        </li>
-                    `;
-                    kalenderList.innerHTML += acaraHtml;
-                });
+                if (data.kalender && data.kalender.length > 0) {
+                    data.kalender.forEach(item => {
+                        const acaraHtml = `
+                            <li class="py-4 flex items-center justify-between">
+                                <div>
+                                    <p class="font-semibold text-gray-800">${item.acara}</p>
+                                    <p class="text-sm text-gray-500">${item.deskripsi}</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold text-purple-600">${item.tanggal}</p>
+                                </div>
+                            </li>
+                        `;
+                        kalenderList.innerHTML += acaraHtml;
+                    });
+                } else {
+                     document.getElementById('kalender').style.display = 'none';
+                }
+
 
             } catch (error) {
                 console.error("Gagal memuat konten:", error);
-                // Anda bisa menampilkan pesan error di halaman jika mau
+                // You can display an error message on the page if you want
             }
         }
 
 
-        // --- KODE YANG SUDAH ADA SEBELUMNYA ---
+        // --- PREVIOUSLY EXISTING CODE ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Inisialisasi AOS
+            // Initialize AOS
             AOS.init({
                 duration: 800,
                 once: false,
             });
 
-            // Memanggil fungsi untuk memuat konten dari JSON
+            // Call the function to load content from JSON
             loadContent();
 
             // Load footer
@@ -233,7 +283,7 @@
                     document.getElementById('footer-placeholder').innerHTML = data;
                 });
 
-            // Script untuk toggle menu mobile
+            // Script for mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
