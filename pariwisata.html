@@ -78,31 +78,15 @@
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-4" data-aos="fade-up">Destinasi Wisata</h2>
                 <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Jelajahi sudut-sudut indah di Dusun Bedalo yang menawarkan ketenangan dan pemandangan memukau.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- PERUBAHAN 2: Menambahkan atribut data-aos pada setiap destinasi -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://placehold.co/800x500/a0aec0/ffffff?text=Air+Terjun+Bedalo" alt="Air Terjun" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Air Terjun Bedalo</h3>
-                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suara gemericik air yang menenangkan dan udara sejuk menjadikannya tempat sempurna untuk melepas penat.</p>
-                            <a href="#" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
-                        </div>
+                <div id="destinasi-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://placehold.co/800x500/63b3ed/ffffff?text=Bukit+Harapan" alt="Bukit" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Bukit Harapan</h3>
-                            <p class="text-gray-600 mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nikmati pemandangan matahari terbit atau terbenam yang spektakuler.</p>
-                            <a href="#" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
         <!-- Adat Istiadat & Tradisi -->
         <section id="tradisi" class="py-20 overflow-hidden">
-            <div class="container mx-auto px-6">
+            <div id="tradisi-container" class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Adat Istiadat & Tradisi</h2>
                 <div class="flex flex-col md:flex-row-reverse items-center gap-12">
                     <div class="md:w-1/2" data-aos="fade-left">
@@ -123,7 +107,7 @@
         
         <!-- Kesenian & Budaya -->
         <section id="kesenian" class="py-20 bg-white overflow-hidden">
-            <div class="container mx-auto px-6">
+            <div id="kesenian-container" class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kesenian & Budaya</h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2" data-aos="fade-right">
@@ -148,33 +132,8 @@
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kalender Acara Budaya</h2>
                 <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="zoom-in">
                     <ul class="divide-y divide-gray-200">
-                        <li class="py-4 flex items-center justify-between">
-                            <div>
-                                <p class="font-semibold text-gray-800">Upacara Sedekah Bumi</p>
-                                <p class="text-sm text-gray-500">Wujud syukur atas hasil panen.</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="font-semibold text-purple-600">Agustus 2024</p>
-                            </div>
-                        </li>
-                        <li class="py-4 flex items-center justify-between">
-                            <div>
-                                <p class="font-semibold text-gray-800">Pentas Seni & Budaya</p>
-                                <p class="text-sm text-gray-500">Perayaan hari kemerdekaan.</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="font-semibold text-purple-600">Agustus 2024</p>
-                            </div>
-                        </li>
-                        <li class="py-4 flex items-center justify-between">
-                            <div>
-                                <p class="font-semibold text-gray-800">Festival Dolanan Anak</p>
-                                <p class="text-sm text-gray-500">Melestarikan permainan tradisional.</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="font-semibold text-purple-600">Oktober 2024</p>
-                            </div>
-                        </li>
+                        <ul id="kalender-list" class="divide-y divide-gray-200">
+                        </ul>
                     </ul>
                 </div>
             </div>
@@ -187,25 +146,100 @@
     <!-- PERUBAHAN 3: Menambahkan Script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // PERUBAHAN 4: Menginisialisasi AOS
-        AOS.init({
-            duration: 800,
-            once: false,
-        });
+        // FUNGSI UNTUK MEMUAT KONTEN DINAMIS
+        async function loadContent() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
 
-        // Load footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
+                // 1. Memuat Destinasi Wisata
+                const destinasiContainer = document.getElementById('destinasi-container');
+                destinasiContainer.innerHTML = ''; // Kosongkan container
+                data.destinasi.forEach((item, index) => {
+                    const destinasiHtml = `
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="${200 + index * 100}">
+                            <img src="${item.gambarUrl}" alt="${item.altText}" class="w-full h-64 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">${item.judul}</h3>
+                                <p class="text-gray-600 mb-4">${item.deskripsi}</p>
+                                <a href="${item.petaLink}" class="font-semibold text-blue-600 hover:underline">Lihat di Peta &rarr;</a>
+                            </div>
+                        </div>
+                    `;
+                    destinasiContainer.innerHTML += destinasiHtml;
+                });
+
+                // 2. Memuat Adat & Tradisi
+                const tradisiContainer = document.getElementById('tradisi-container');
+                tradisiContainer.querySelector('img').src = data.tradisi.gambarUrl;
+                tradisiContainer.querySelector('img').alt = data.tradisi.altText;
+                tradisiContainer.querySelector('h3').textContent = data.tradisi.judul;
+                const tradisiParagraphs = tradisiContainer.querySelectorAll('p');
+                tradisiParagraphs[0].textContent = data.tradisi.deskripsi[0];
+                tradisiParagraphs[1].textContent = data.tradisi.deskripsi[1];
+
+                // 3. Memuat Kesenian & Budaya
+                const kesenianContainer = document.getElementById('kesenian-container');
+                kesenianContainer.querySelector('img').src = data.kesenian.gambarUrl;
+                kesenianContainer.querySelector('img').alt = data.kesenian.altText;
+                kesenianContainer.querySelector('h3').textContent = data.kesenian.judul;
+                const kesenianParagraphs = kesenianContainer.querySelectorAll('p');
+                kesenianParagraphs[0].textContent = data.kesenian.deskripsi[0];
+                kesenianParagraphs[1].textContent = data.kesenian.deskripsi[1];
+
+                // 4. Memuat Kalender Acara
+                const kalenderList = document.getElementById('kalender-list');
+                kalenderList.innerHTML = ''; // Kosongkan list
+                data.kalender.forEach(item => {
+                    const acaraHtml = `
+                        <li class="py-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-800">${item.acara}</p>
+                                <p class="text-sm text-gray-500">${item.deskripsi}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-purple-600">${item.tanggal}</p>
+                            </div>
+                        </li>
+                    `;
+                    kalenderList.innerHTML += acaraHtml;
+                });
+
+            } catch (error) {
+                console.error("Gagal memuat konten:", error);
+                // Anda bisa menampilkan pesan error di halaman jika mau
+            }
+        }
+
+
+        // --- KODE YANG SUDAH ADA SEBELUMNYA ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inisialisasi AOS
+            AOS.init({
+                duration: 800,
+                once: false,
             });
-            
-        // Script untuk toggle menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            // Memanggil fungsi untuk memuat konten dari JSON
+            loadContent();
+
+            // Load footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+
+            // Script untuk toggle menu mobile
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         });
     </script>
 
