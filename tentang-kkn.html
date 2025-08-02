@@ -3,149 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang KKN 117 - Website Dusun Bedalo</title>
+    <title>Tentang KKN - Website Dusun Bedalo</title>
     <link rel="icon" type="image/x-icon" href="icon.svg">
     
-    <!-- Menggunakan Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Menambahkan CSS untuk AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Menggunakan Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Menggunakan Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header & Navigasi -->
     <header class="bg-white shadow-md sticky top-0 z-50 relative">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-800">
-                Dusun Bedalo
-            </a>
+            <a href="/" class="text-2xl font-bold text-gray-800">Dusun Bedalo</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
                 <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
                 <a href="potensi.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Potensi</a>
                 <a href="pariwisata.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Pariwisata</a>
                 <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
-                <a href="kontak.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Kontak</a>
+                <a href="kontak.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Kontak</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full shadow-lg">
-            <a href="/" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beranda</a>
-            <a href="profil.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Profil</a>
-            <a href="potensi.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Potensi</a>
-            <a href="pariwisata.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Pariwisata</a>
-            <a href="galeri.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Galeri</a>
-            <a href="kkn.html" class="block px-6 py-3 text-blue-600 bg-gray-100">Tentang KKN</a>
-            <a href="kontak.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Kontak</a>
-        </div>
+            </div>
     </header>
 
     <main>
-        <!-- Judul Halaman -->
-        <section class="bg-orange-500 text-white py-12">
+        <section id="judul-halaman" class="bg-orange-500 text-white py-12">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl font-bold" data-aos="fade-down">Tentang KKN Reguler Periode 117</h1>
-                <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="100">Universitas Islam Negeri Sunan Kalijaga Yogyakarta</p>
+                <h1 class="text-4xl font-bold" data-aos="fade-down"></h1>
+                <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="100"></p>
             </div>
         </section>
 
-        <!-- Perkenalan Tim -->
         <section id="pengantar" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Tim Pengembang Website</h2>
-                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    Website ini merupakan salah satu program kerja utama dari tim Kuliah Kerja Nyata (KKN) Reguler Periode 117 Unit VIII.D.1 dari Universitas Ahmad Dahlan. Kami berupaya mendigitalisasi informasi dan potensi Dusun Bedalo agar dapat diakses oleh masyarakat luas. Melalui website ini, kami berharap dapat menjadi jembatan antara Dusun Bedalo dengan dunia luar.
-                </p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up"></h2>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="100"></p>
             </div>
         </section>
 
-        <!-- Anggota Tim -->
         <section id="anggota" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Anggota Kelompok 129 - Bedalo</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Contoh Anggota 1 -->
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
-                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
-                        <p class="text-gray-500">Program Studi</p>
+                <h2 id="anggota-judul" class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up"></h2>
+                <div id="anggota-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     </div>
-                    <!-- Contoh Anggota 2 -->
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
-                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
-                        <p class="text-gray-500">Program Studi</p>
-                    </div>
-                    <!-- Contoh Anggota 3 -->
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
-                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
-                        <p class="text-gray-500">Program Studi</p>
-                    </div>
-                    <!-- Contoh Anggota 4 -->
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="https://placehold.co/300x300/e2e8f0/333333?text=Foto+Anggota" alt="Foto Anggota" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
-                        <h4 class="text-lg font-bold text-gray-800">Nama Lengkap Mahasiswa</h4>
-                        <p class="text-gray-500">Program Studi</p>
-                    </div>
-                     <!-- Anda bisa menambahkan lebih banyak anggota di sini -->
-                </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
+        async function loadKknContent() {
+            try {
+                const response = await fetch('data/tentang-kkn.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
 
-        // Load footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
+                document.getElementById('judul-halaman').querySelector('h1').textContent = data.judulHalaman.judul;
+                document.getElementById('judul-halaman').querySelector('p').textContent = data.judulHalaman.universitas;
+
+                const pengantarSection = document.getElementById('pengantar');
+                pengantarSection.querySelector('h2').textContent = data.pengantar.judul;
+                pengantarSection.querySelector('p').textContent = data.pengantar.deskripsi;
+
+                document.getElementById('anggota-judul').textContent = data.anggota.judul;
+                const anggotaGrid = document.getElementById('anggota-grid');
+                
+                anggotaGrid.innerHTML = data.anggota.tim.map((item, index) => {
+                    const memberCardHtml = `
+                        <img src="${item.fotoUrl}" alt="Foto ${item.nama}" class="w-40 h-40 rounded-full mx-auto object-cover shadow-lg mb-4">
+                        <h4 class="text-lg font-bold text-gray-800">${item.nama}</h4>
+                        <p class="text-gray-500">${item.prodi}</p>
+                    `;
+
+                    // PERUBAHAN 2: Mengubah (index % 4) menjadi (index % 5)
+                    const aosDelay = 100 + (index % 5) * 100;
+
+                    if (item.instagramUrl) {
+                        return `
+                            <a href="${item.instagramUrl}" target="_blank" rel="noopener noreferrer" class="block text-center transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="${aosDelay}">
+                                ${memberCardHtml}
+                            </a>
+                        `;
+                    } else {
+                        return `
+                            <div class="text-center" data-aos="zoom-in" data-aos-delay="${aosDelay}">
+                                ${memberCardHtml}
+                            </div>
+                        `;
+                    }
+                }).join('');
+
+                document.title = `${data.judulHalaman.judul} - Website Dusun Bedalo`;
+
+            } catch (error) {
+                console.error("Gagal memuat konten KKN:", error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
             });
 
-        // Script untuk toggle menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+            // Fungsi footer dinamis yang sudah ada
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            // Load footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+            // (Pastikan fungsi loadDynamicFooter() juga ada di sini jika Anda sudah menerapkannya)
+            async function loadDynamicFooter() {
+                // ... (kode fungsi footer Anda)
+            }
+            loadDynamicFooter();
+
+
+            loadKknContent();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = {
+                "Beranda": "/",
+                "Profil": "profil.html",
+                "Potensi": "potensi.html",
+                "Pariwisata": "pariwisata.html",
+                "Galeri": "galeri.html",
+                "Tentang KKN": "tentang-kkn.html",
+                "Kontak": "kontak.html"
+            };
+
+            const mobileMenuContainer = document.getElementById('mobile-menu');
+            for (const [nama, url] of Object.entries(navLinks)) {
+                const link = document.createElement('a');
+                link.href = url;
+                link.textContent = nama;
+                link.className = 'block px-6 py-3 text-gray-600 hover:bg-gray-100';
+                if (window.location.href.endsWith(url)) {
+                    link.classList.add('text-blue-600', 'bg-gray-100');
+                }
+                mobileMenuContainer.appendChild(link);
+            }
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         });
     </script>
-
 </body>
 </html>

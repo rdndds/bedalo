@@ -6,50 +6,34 @@
     <title>Kontak & Aspirasi - Website Dusun Bedalo</title>
     <link rel="icon" type="image/x-icon" href="icon.svg">
     
-    <!-- Menggunakan Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- PERUBAHAN 1: Menambahkan CSS untuk AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Menggunakan Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Menggunakan Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header & Navigasi -->
     <header class="bg-white shadow-md sticky top-0 z-50 relative">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-800">
-                Dusun Bedalo
-            </a>
+            <a href="/" class="text-2xl font-bold text-gray-800">Dusun Bedalo</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
                 <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
                 <a href="potensi.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Potensi</a>
                 <a href="pariwisata.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Pariwisata</a>
                 <a href="galeri.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Galeri</a>
-                <a href="kontak.html" class="bg-blue-700 text-white px-4 py-2 rounded-md">Kontak</a>
+                <a href="kontak.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Kontak</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
@@ -64,7 +48,6 @@
     </header>
 
     <main>
-        <!-- Judul Halaman -->
         <section class="bg-blue-600 text-white py-12">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl font-bold" data-aos="fade-down">Hubungi Kami</h1>
@@ -72,67 +55,40 @@
             </div>
         </section>
 
-        <!-- Kontak Perangkat Dusun -->
         <section id="kontak-perangkat" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kontak Perangkat Dusun</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- PERUBAHAN 2: Menambahkan atribut data-aos pada setiap kontak -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
-                            <p class="text-gray-500 mb-2">Kepala Dusun</p>
-                            <a href="tel:081234567890" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7890</a>
-                        </div>
+                <div id="kontak-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
-                            <p class="text-gray-500 mb-2">Ketua RW 01</p>
-                            <a href="tel:081234567891" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7891</a>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://placehold.co/100x100/e2e8f0/333333?text=Foto" alt="Foto Pejabat" class="w-20 h-20 rounded-full object-cover">
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-800">Nama Lengkap</h4>
-                            <p class="text-gray-500 mb-2">Ketua RT 01</p>
-                            <a href="tel:081234567892" class="text-blue-600 hover:underline text-sm flex items-center gap-1"><i class="fas fa-phone-alt"></i> 0812-3456-7892</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Formulir Aspirasi -->
         <section id="aspirasi" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div class="lg:w-1/3 text-center lg:text-left" data-aos="fade-right">
-                        <h2 class="text-3xl font-bold text-gray-800">Punya Ide atau Masukan?</h2>
-                        <p class="text-gray-600 mt-4 leading-relaxed">Kami sangat terbuka untuk menerima aspirasi, kritik, dan saran dari seluruh warga demi kemajuan Dusun Bedalo. Silakan sampaikan melalui formulir di samping.</p>
+                    <div id="aspirasi-info" class="lg:w-1/3 text-center lg:text-left" data-aos="fade-right">
+                        <h2 id="aspirasi-judul" class="text-3xl font-bold text-gray-800"></h2>
+                        <p id="aspirasi-deskripsi" class="text-gray-600 mt-4 leading-relaxed"></p>
                     </div>
                     <div class="lg:w-2/3 w-full" data-aos="fade-left" data-aos-delay="100">
                         <div class="bg-white p-8 rounded-lg shadow-2xl">
                             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Formulir Aspirasi Warga</h3>
-                            <form id="aspirasi-form">
+                            <form id="aspirasi-form" action="">
                                 <div class="mb-4">
                                     <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
-                                    <input type="text" id="nama" name="entry.2116275708" placeholder="Masukkan nama Anda" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
+                                    <input type="text" id="nama" name="" placeholder="Masukkan nama Anda" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="kontak" class="block text-gray-700 text-sm font-bold mb-2">No. Telepon / Email</label>
-                                    <input type="text" id="kontak" name="entry.175133211" placeholder="Agar kami bisa menghubungi Anda kembali" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
+                                    <input type="text" id="kontak" name="" placeholder="Agar kami bisa menghubungi Anda kembali" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="subjek" class="block text-gray-700 text-sm font-bold mb-2">Subjek</label>
-                                    <input type="text" id="subjek" name="entry.1266128475" placeholder="Contoh: Usulan Perbaikan Jalan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
+                                    <input type="text" id="subjek" name="" placeholder="Contoh: Usulan Perbaikan Jalan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required>
                                 </div>
                                 <div class="mb-6">
                                     <label for="pesan" class="block text-gray-700 text-sm font-bold mb-2">Pesan Aspirasi</label>
-                                    <textarea id="pesan" name="entry.1942425125" rows="5" placeholder="Tuliskan pesan, ide, atau masukan Anda di sini..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required></textarea>
+                                    <textarea id="pesan" name="" rows="5" placeholder="Tuliskan pesan, ide, atau masukan Anda di sini..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" required></textarea>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
@@ -147,100 +103,135 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Modal Pop-up -->
     <div id="status-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
         <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm w-full">
             <div id="modal-content"></div>
         </div>
     </div>
 
-    <!-- PERUBAHAN 3: Menambahkan Script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // PERUBAHAN 4: Menginisialisasi AOS
-        AOS.init({
-            duration: 800,
-            once: false,
-        });
+        // Fungsi untuk memuat konten dari JSON
+        async function loadKontakContent() {
+            try {
+                const response = await fetch('data/kontak.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
 
-        // Load footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+                // 1. Render Kontak Perangkat
+                const kontakGrid = document.getElementById('kontak-grid');
+                kontakGrid.innerHTML = data.kontakPemerintah.map((item, index) => `
+                    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center gap-4" data-aos="fade-up" data-aos-delay="${100 + index * 100}">
+                        <img src="${item.fotoUrl}" alt="Foto ${item.nama}" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800">${item.nama}</h4>
+                            <p class="text-gray-500 mb-2">${item.jabatan}</p>
+                            <a href="tel:${item.telepon}" class="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                                <i class="fas fa-phone-alt"></i> ${item.telepon.replace(/(\d{4})(?=\d)/g, '$1-')}
+                            </a>
+                        </div>
+                    </div>`).join('');
 
-        // Script untuk toggle menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+                // 2. Render Info & Konfigurasi Form Aspirasi
+                const formAspirasi = data.formAspirasi;
+                document.getElementById('aspirasi-judul').textContent = formAspirasi.judul;
+                document.getElementById('aspirasi-deskripsi').textContent = formAspirasi.deskripsi;
+                
+                const formElement = document.getElementById('aspirasi-form');
+                formElement.action = formAspirasi.formActionUrl;
+                formElement.querySelector('#nama').name = formAspirasi.entry.nama;
+                formElement.querySelector('#kontak').name = formAspirasi.entry.kontak;
+                formElement.querySelector('#subjek').name = formAspirasi.entry.subjek;
+                formElement.querySelector('#pesan').name = formAspirasi.entry.pesan;
 
-        // Script untuk form submission
-        const form = document.getElementById('aspirasi-form');
-        const statusModal = document.getElementById('status-modal');
-        const modalContent = document.getElementById('modal-content');
-
-        function hideModal() {
-            statusModal.classList.add('hidden');
+            } catch (error) {
+                console.error("Gagal memuat konten kontak:", error);
+            }
         }
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            modalContent.innerHTML = `
-                <div class="flex justify-center items-center mb-4">
-                    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-                <p class="text-lg text-gray-700">Mengirim pesan...</p>
-            `;
-            statusModal.classList.remove('hidden');
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: false,
+            });
             
-            const formData = new FormData(form);
-            const formAction = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfWaCgBA-cNraUbTmOGjlmrZQ-99edYMdUSkbA-kQBtZm6QOw/formResponse';
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+            
+            loadKontakContent();
 
-            fetch(formAction, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Script untuk form submission
+            const form = document.getElementById('aspirasi-form');
+            const statusModal = document.getElementById('status-modal');
+            const modalContent = document.getElementById('modal-content');
+
+            function hideModal() {
+                statusModal.classList.add('hidden');
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!form.action) {
+                    console.error("Form action URL not loaded yet.");
+                    return;
+                }
                 modalContent.innerHTML = `
-                    <div class="text-green-500 text-6xl mb-4"><i class="fas fa-check-circle"></i></div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Terima Kasih!</h3>
-                    <p class="text-gray-600 mb-6">Aspirasi Anda telah berhasil terkirim.</p>
-                    <button id="close-modal-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full">Tutup</button>
-                `;
-                document.getElementById('close-modal-btn').addEventListener('click', hideModal);
-                form.reset();
-            })
-            .catch(error => {
-                modalContent.innerHTML = `
-                    <div class="text-red-500 text-6xl mb-4"><i class="fas fa-times-circle"></i></div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Gagal Mengirim</h3>
-                    <p class="text-gray-600 mb-6">Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
-                    <button id="close-modal-btn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full">Tutup</button>
-                `;
-                document.getElementById('close-modal-btn').addEventListener('click', hideModal);
-                console.error('Error:', error);
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                    <p class="text-lg text-gray-700">Mengirim pesan...</p>`;
+                statusModal.classList.remove('hidden');
+                
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    modalContent.innerHTML = `
+                        <div class="text-green-500 text-6xl mb-4"><i class="fas fa-check-circle"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Terima Kasih!</h3>
+                        <p class="text-gray-600 mb-6">Aspirasi Anda telah berhasil terkirim.</p>
+                        <button id="close-modal-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full">Tutup</button>`;
+                    document.getElementById('close-modal-btn').addEventListener('click', hideModal);
+                    form.reset();
+                })
+                .catch(error => {
+                    modalContent.innerHTML = `
+                        <div class="text-red-500 text-6xl mb-4"><i class="fas fa-times-circle"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Gagal Mengirim</h3>
+                        <p class="text-gray-600 mb-6">Maaf, terjadi kesalahan. Silakan coba lagi nanti.</p>
+                        <button id="close-modal-btn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full">Tutup</button>`;
+                    document.getElementById('close-modal-btn').addEventListener('click', hideModal);
+                    console.error('Error:', error);
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !statusModal.classList.contains('hidden')) {
+                    hideModal();
+                }
+            });
+
+            statusModal.addEventListener('click', (e) => {
+                if (e.target === statusModal) {
+                    hideModal();
+                }
             });
         });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !statusModal.classList.contains('hidden')) {
-                hideModal();
-            }
-        });
-
-        statusModal.addEventListener('click', (e) => {
-            if (e.target === statusModal) {
-                hideModal();
-            }
-        });
     </script>
-
 </body>
 </html>
