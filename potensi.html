@@ -6,37 +6,23 @@
     <title>Potensi - Website Dusun Bedalo</title>
     <link rel="icon" type="image/x-icon" href="icon.svg">
     
-    <!-- Menggunakan Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- PERUBAHAN 1: Menambahkan CSS untuk AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Menggunakan Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Menggunakan Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header & Navigasi -->
     <header class="bg-white shadow-md sticky top-0 z-50 relative">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-800">
-                Dusun Bedalo
-            </a>
+            <a href="/" class="text-2xl font-bold text-gray-800">Dusun Bedalo</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300">Beranda</a>
                 <a href="profil.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Profil</a>
@@ -47,9 +33,7 @@
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
@@ -64,7 +48,6 @@
     </header>
 
     <main>
-        <!-- Judul Halaman -->
         <section class="bg-green-600 text-white py-12">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl font-bold" data-aos="fade-down">Potensi Dusun Bedalo</h1>
@@ -72,173 +55,98 @@
             </div>
         </section>
 
-        <!-- UMKM & Produk Unggulan dengan Slider -->
         <section id="umkm" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-4" data-aos="fade-up">UMKM & Produk Unggulan</h2>
                 <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Karya kreatif dan produk olahan dari tangan-tangan terampil warga Dusun Bedalo.</p>
-                
-                <!-- PERUBAHAN 2: Menambahkan atribut data-aos pada wrapper slider -->
                 <div class="relative" data-aos="fade-up" data-aos-delay="200">
                     <div id="slider-wrapper" class="overflow-hidden">
                         <div id="umkm-slider" class="flex">
-                            <!-- Item 1 -->
-                            <div class="umkm-card w-full lg:w-1/3 flex-shrink-0 p-4">
-                                <div class="bg-white h-full rounded-lg shadow-lg overflow-hidden flex flex-col">
-                                    <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Produk+1" alt="Produk UMKM 1" class="w-full h-48 object-cover">
-                                    <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Keripik Singkong</h3>
-                                        <p class="text-gray-600 mb-4 text-sm flex-grow">Renyah dan gurih, dibuat dari singkong pilihan dari kebun sendiri.</p>
-                                        <div class="flex justify-between items-center mt-auto">
-                                            <span class="text-lg font-bold text-green-600">Rp 15.000</span>
-                                            <a href="https://wa.me/6283107581144" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Hubungi</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <!-- Item 2 -->
-                            <div class="umkm-card w-full lg:w-1/3 flex-shrink-0 p-4">
-                               <div class="bg-white h-full rounded-lg shadow-lg overflow-hidden flex flex-col">
-                                    <img src="https://placehold.co/600x400/f6ad55/ffffff?text=Produk+2" alt="Produk UMKM 2" class="w-full h-48 object-cover">
-                                    <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Gula Aren Asli</h3>
-                                        <p class="text-gray-600 mb-4 text-sm flex-grow">Manis alami tanpa bahan pengawet, diproses secara tradisional.</p>
-                                        <div class="flex justify-between items-center mt-auto">
-                                            <span class="text-lg font-bold text-green-600">Rp 25.000</span>
-                                            <a href="https://wa.me/6283107581144" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Hubungi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="umkm-card w-full lg:w-1/3 flex-shrink-0 p-4">
-                                <div class="bg-white h-full rounded-lg shadow-lg overflow-hidden flex flex-col">
-                                    <img src="https://placehold.co/600x400/63b3ed/ffffff?text=Produk+3" alt="Produk UMKM 3" class="w-full h-48 object-cover">
-                                    <div class="p-6 flex flex-col flex-grow">
-                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tas Anyaman Pandan</h3>
-                                        <p class="text-gray-600 mb-4 text-sm flex-grow">Kuat dan stylish, hasil kerajinan tangan ibu-ibu dusun.</p>
-                                        <div class="flex justify-between items-center mt-auto">
-                                            <span class="text-lg font-bold text-green-600">Rp 75.000</span>
-                                            <a href="https://wa.me/6283107581144" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Hubungi</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ... (kartu produk lainnya) ... -->
-                        </div>
                     </div>
                 </div>
                 <div class="mt-8 flex justify-center items-center gap-4" data-aos="fade-up">
-                    <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-3 rounded-full">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
+                    <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-3 rounded-full"><i class="fas fa-chevron-left"></i></button>
                     <div id="dot-indicator" class="flex items-center gap-2"></div>
-                    <button id="next-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-3 rounded-full">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <button id="next-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-3 rounded-full"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- Pertanian & Perkebunan -->
         <section id="pertanian" class="py-20 overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Pertanian & Perkebunan</h2>
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2" data-aos="fade-right">
-                        <img src="https://placehold.co/800x600/a0aec0/ffffff?text=Lahan+Pertanian" alt="Lahan Pertanian" class="rounded-lg shadow-xl w-full h-full object-cover">
+                <div id="pertanian-content" class="flex flex-col md:flex-row items-center gap-12">
                     </div>
-                    <div class="md:w-1/2" data-aos="fade-left">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kesuburan Tanah Bedalo</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lahan pertanian di Dusun Bedalo sangat subur dan menjadi tumpuan hidup sebagian besar warga. Berbagai komoditas unggulan dihasilkan dari sini.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 text-gray-700">
-                            <div class="flex items-center gap-2"><i class="fas fa-seedling text-green-500"></i> Padi</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-leaf text-green-500"></i> Sayur-mayur</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-pepper-hot text-red-500"></i> Cabai</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-lemon text-yellow-500"></i> Buah-buahan</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Potensi Lainnya -->
         <section id="lainnya" class="py-20 bg-white overflow-hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Potensi Lainnya</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-cow text-5xl text-blue-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Peternakan</h4>
-                        <p class="text-gray-600">Pengembangan ternak sapi, kambing, dan ayam untuk memenuhi kebutuhan pangan dan ekonomi warga.</p>
+                <div id="lainnya-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     </div>
-                    <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-fish text-5xl text-cyan-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Perikanan</h4>
-                        <p class="text-gray-600">Pemanfaatan sumber air untuk budidaya ikan air tawar sebagai sumber protein dan pendapatan tambahan.</p>
-                    </div>
-                    <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-users-cog text-5xl text-gray-500 mb-4"></i>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Jasa & Keahlian</h4>
-                        <p class="text-gray-600">Berbagai keahlian warga seperti pertukangan, kerajinan tangan, dan jasa lainnya yang menopang ekonomi lokal.</p>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- PERUBAHAN 3: Menambahkan Script AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // PERUBAHAN 4: Menginisialisasi AOS
-        AOS.init({
-            duration: 800,
-            once: false,            
-        });
-
-        // Load footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-            
-        // Script untuk slider (tidak berubah)
-        document.addEventListener('DOMContentLoaded', () => {
+        // Fungsi untuk menginisialisasi slider
+        function setupSlider() {
             const slider = document.getElementById('umkm-slider');
-            if (!slider) return; // Pastikan slider ada
+            if (!slider || slider.children.length === 0) return;
+
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
             const dotContainer = document.getElementById('dot-indicator');
-            const originalCards = Array.from(document.querySelectorAll('.umkm-card'));
+            const originalCards = Array.from(slider.querySelectorAll('.umkm-card'));
             
+            if (originalCards.length === 0) return;
+
             let cardsPerView;
             let totalSlides;
             let slideWidth;
             let currentIndex;
             let isTransitioning = false;
 
-            function setupSlider() {
+            function configureSlider() {
+                isTransitioning = true;
                 cardsPerView = window.innerWidth < 1024 ? 1 : 3;
                 totalSlides = Math.ceil(originalCards.length / cardsPerView);
                 slideWidth = document.getElementById('slider-wrapper').clientWidth;
+                
+                // Jika jumlah kartu kurang dari atau sama dengan yang ditampilkan, sembunyikan navigasi
+                if(originalCards.length <= cardsPerView) {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                    dotContainer.style.display = 'none';
+                    slider.style.transform = `translateX(0px)`;
+                    // Hapus semua kloning jika ada
+                    slider.innerHTML = '';
+                    originalCards.forEach(card => slider.appendChild(card));
+                    isTransitioning = false;
+                    return;
+                }
+                
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+                dotContainer.style.display = 'flex';
 
                 const clonesStart = originalCards.slice(-cardsPerView).map(card => card.cloneNode(true));
                 const clonesEnd = originalCards.slice(0, cardsPerView).map(card => card.cloneNode(true));
                 
                 slider.innerHTML = '';
                 clonesStart.forEach(clone => slider.appendChild(clone));
-                originalCards.forEach(card => slider.appendChild(card));
+                originalCards.forEach(card => slider.appendChild(card.cloneNode(true))); // Gunakan kloning agar event listener tidak hilang
                 clonesEnd.forEach(clone => slider.appendChild(clone));
 
                 currentIndex = cardsPerView;
                 positionSlider(false);
                 updateDots();
+                isTransitioning = false;
             }
 
             function positionSlider(withTransition = true) {
@@ -249,16 +157,16 @@
 
             function updateDots() {
                 dotContainer.innerHTML = '';
+                if(totalSlides <= 1) return;
+
                 const currentSlide = Math.floor(((currentIndex - cardsPerView + originalCards.length) % originalCards.length) / cardsPerView);
                 
                 for (let i = 0; i < totalSlides; i++) {
                     const dot = document.createElement('button');
                     dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-300');
-                    if (i === currentSlide) {
-                        dot.classList.add('bg-blue-600');
-                    } else {
-                        dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
-                    }
+                    dot.classList.toggle('bg-blue-600', i === currentSlide);
+                    dot.classList.toggle('bg-gray-300', i !== currentSlide);
+                    dot.classList.toggle('hover:bg-gray-400', i !== currentSlide);
                     dot.addEventListener('click', () => {
                         if (isTransitioning) return;
                         currentIndex = i * cardsPerView + cardsPerView;
@@ -279,11 +187,12 @@
             }
 
             slider.addEventListener('transitionend', () => {
+                const totalClonedCards = originalCards.length + cardsPerView;
                 if (currentIndex < cardsPerView) {
-                    currentIndex = originalCards.length + (currentIndex % cardsPerView);
+                    currentIndex = totalClonedCards - (cardsPerView - currentIndex);
                     positionSlider(false);
-                } else if (currentIndex >= originalCards.length + cardsPerView) {
-                    currentIndex = cardsPerView + (currentIndex % cardsPerView);
+                } else if (currentIndex >= totalClonedCards) {
+                    currentIndex = (currentIndex - totalClonedCards) + cardsPerView;
                     positionSlider(false);
                 }
                 isTransitioning = false;
@@ -291,16 +200,108 @@
 
             nextBtn.addEventListener('click', () => shiftSlide(1));
             prevBtn.addEventListener('click', () => shiftSlide(-1));
-            window.addEventListener('resize', setupSlider);
+            window.addEventListener('resize', configureSlider);
 
-            setupSlider();
-        });
+            configureSlider();
+        }
 
-        // Script untuk toggle menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // Fungsi utama untuk memuat semua konten dinamis
+        async function loadContent() {
+            try {
+                const response = await fetch('data/potensi.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+
+                // 1. Render UMKM
+                const umkmSlider = document.getElementById('umkm-slider');
+                umkmSlider.innerHTML = '';
+                if (data.umkm && data.umkm.length > 0) {
+                    data.umkm.forEach(item => {
+                        umkmSlider.innerHTML += `
+                            <div class="umkm-card w-full lg:w-1/3 flex-shrink-0 p-4">
+                                <div class="bg-white h-full rounded-lg shadow-lg overflow-hidden flex flex-col">
+                                    <img src="${item.gambarUrl}" alt="${item.altText}" class="w-full h-48 object-cover">
+                                    <div class="p-6 flex flex-col flex-grow">
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">${item.judul}</h3>
+                                        <p class="text-gray-600 mb-4 text-sm flex-grow">${item.deskripsi}</p>
+                                        <div class="flex justify-between items-center mt-auto">
+                                            <span class="text-lg font-bold text-green-600">${item.harga}</span>
+                                            <a href="${item.kontakLink}" target="_blank" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Hubungi</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                    });
+                    // Setelah kartu UMKM dirender, inisialisasi slider
+                    setupSlider();
+                } else {
+                    document.getElementById('umkm').style.display = 'none';
+                }
+
+                // 2. Render Pertanian
+                const pertanianContent = document.getElementById('pertanian-content');
+                pertanianContent.innerHTML = '';
+                if (data.pertanian) {
+                    const komoditasHtml = data.pertanian.komoditas.map(k => `
+                        <div class="flex items-center gap-2"><i class="${k.icon}"></i> ${k.nama}</div>
+                    `).join('');
+                    pertanianContent.innerHTML = `
+                        <div class="md:w-1/2" data-aos="fade-right">
+                            <img src="${data.pertanian.gambarUrl}" alt="${data.pertanian.altText}" class="rounded-lg shadow-xl w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2" data-aos="fade-left">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">${data.pertanian.judul}</h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">${data.pertanian.deskripsi}</p>
+                            <div class="grid grid-cols-2 gap-4 text-gray-700">${komoditasHtml}</div>
+                        </div>`;
+                } else {
+                    document.getElementById('pertanian').style.display = 'none';
+                }
+
+                // 3. Render Potensi Lainnya
+                const lainnyaGrid = document.getElementById('lainnya-grid');
+                lainnyaGrid.innerHTML = '';
+                if (data.lainnya && data.lainnya.length > 0) {
+                    data.lainnya.forEach((item, index) => {
+                        lainnyaGrid.innerHTML += `
+                            <div class="text-center p-6 border rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="${100 + index * 100}">
+                                <i class="${item.icon}"></i>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">${item.judul}</h4>
+                                <p class="text-gray-600">${item.deskripsi}</p>
+                            </div>`;
+                    });
+                } else {
+                     document.getElementById('lainnya').style.display = 'none';
+                }
+
+            } catch (error) {
+                console.error("Gagal memuat konten potensi:", error);
+            }
+        }
+        
+        // Event Listener utama saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: false,            
+            });
+
+            // Muat footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+            
+            // Muat konten dinamis dari JSON
+            loadContent();
+
+            // Script untuk toggle menu mobile
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         });
     </script>
 
